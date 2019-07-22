@@ -1,0 +1,20 @@
+version: '3'
+services:
+  db:
+    image: postgres:9.4
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./tmp/db:/var/lib/postgresql/data
+  web:
+    build: .
+    command: bundle exec rails server -b 0.0.0.0
+    volumes:
+      - '.:/github-crawler'
+    ports:
+      - '3000:3000'
+    environment:
+      DATABASE_URL: postgres://postgres@db
+      RAILS_ENV: development
+    depends_on:
+      - db
