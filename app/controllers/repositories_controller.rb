@@ -1,7 +1,8 @@
 class RepositoriesController < ApplicationController
   def index
-    service = GithubService.new
-    service.search_repositories_from_languages
+    #TODO: uncomment this
+    # service = GithubService.new
+    # service.search_repositories_from_languages
 
     @repositories = Repository.all
   end

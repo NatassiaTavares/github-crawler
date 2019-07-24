@@ -1,12 +1,14 @@
-<h1>Repositories#show</h1>
-
-<%= @repository.name %> </br>
-<%= @repository.full_name %> </br>
-<%= @repository.private %> </br>
-<%= @repository.html_url %> </br>
-<%= @repository.description %> </br>
-<%= @repository.fork %> </br>
-<%= @repository.open_issues %> </br>
-<%= @repository.watchers %> </br>
-<%= @repository.score %> </br>
-<%= @repository.language %>
+<div class="center-div flex-column with-margin">
+    <h2><%= @repository.name %></h2>
+    <ul>
+        <li class="li">Nome completo: <%= @repository.full_name %></li>
+        <li class="li"><%= @repository.private %></li>
+        <li class="li">Url: <%= @repository.html_url %></li>
+        <li class="li">Descrição: <%= @repository.description %></li>
+        <li class="li"><%= @repository.fork %></li>
+        <li class="li">Issues abertos: <%= @repository.open_issues %></li>
+        <li class="li">Quantidade de Watchers: <%= @repository.watchers %></li>
+        <li class="li">Score: <%= @repository.score %></li>
+        <li class="li">Linguagem: <%= @repository.language %></li>
+    </ul>
+</div>

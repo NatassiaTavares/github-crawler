@@ -13,3 +13,21 @@
  *= require_tree .
  *= require_self
  */
+
+
+.center-div {
+    display: flex;
+    justify-content: center;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.home-container {
+    margin: 10%;
+}
+  
+.button-to-repositories {
+    text-decoration: none;
+}

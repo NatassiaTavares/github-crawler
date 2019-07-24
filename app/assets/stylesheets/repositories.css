@@ -2,3 +2,42 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
+
+.center-div {
+  display: flex;
+  justify-content: center;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.with-margin {
+  margin: 5% 10%;
+}
+
+.btn {
+  text-decoration: none;
+  width: 130px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: blueviolet;
+  text-align: center;
+  vertical-align: middle;
+  padding: 10px 10px 0px 10px;
+  color: white;
+  margin-top: 2%;
+}
+
+.font-sans-serif {
+  font-family: sans-serif;
+}
+
+.li {
+  padding: 1% 0;
+  list-style-type: none;
+}
+
+.repo-link {
+  text-decoration: none;
+}
