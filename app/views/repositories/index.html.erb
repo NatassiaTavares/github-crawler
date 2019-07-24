@@ -1,0 +1,9 @@
+<h1>Repositories#index</h1>
+
+<div>
+    <% @repositories.each do |repository| %>
+        <div>
+            <%= link_to repository.name, repositories_show_path(repository)	 %>
+        </div>
+    <% end %>
+</div>
