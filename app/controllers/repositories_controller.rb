@@ -7,7 +7,6 @@ class RepositoriesController < ApplicationController
   end
 
   def show
-    binding.pry
     @repository = Repository.find(params[:format])
   end
 end
