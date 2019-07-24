@@ -29,8 +29,6 @@ gem 'rest-client', '~> 2.0', '>= 2.0.2'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
-gem 'simple_form'
-
 group :development, :test do
   gem 'rspec-rails', '~> 3.8'
   gem 'pry', '~> 0.12.2'
