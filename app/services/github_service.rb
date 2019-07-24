@@ -7,19 +7,16 @@ class GithubService
     end
 
     def search_repositories_from_languages
-        complete_url = "#{@url}/search/repositories?q=language:python&sorts:stars"
-        response = RestClient.get(complete_url)
-        response_hash = JSON.parse(response)
-        parse_response_to_repositories(response_hash)
+        @languages.each do |language|
+            complete_url = "#{@url}/search/repositories?q=language:#{@language}&sorts:stars"
+            response = RestClient.get(complete_url)
+            response_hash = JSON.parse(response)
+            save_repositories_from_response(response_hash)
+        end
     end
 
     private
-
-    def build_search_query
-        #TODO: this
-    end
-
-    def parse_response_to_repositories(response)
+    def save_repositories_from_response(response)
         items = response['items']
 
         items.each do |item|
@@ -41,6 +38,7 @@ class GithubService
             repo.open_issues = item['open_issues']
             repo.watchers = item['watchers']
             repo.score = item['score']
+            repo.language = item['language']
             repo.save 
         end
     end
