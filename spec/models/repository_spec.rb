@@ -6,7 +6,7 @@ RSpec.describe Repository, type: :model do
   context 'when not valid' do
     describe 'when already has same github_id' do
       before (:each) do
-        @repository = Repository.first ||= create(:repository)
+        @repository = Repository.any? ? Repository.first : create(:repository)
       end
     
       it 'should not be valid' do

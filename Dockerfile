@@ -19,7 +19,7 @@ RUN npm -v
 # the RubyGems. This is a separate step so the dependencies
 # will be cached unless changes to one of those two files
 # are made.
-COPY Gemfile Gemfile.lock package.json yarn.lock ./
+COPY Gemfile Gemfile.lock  yarn.lock ./
 RUN gem install bundler -v 1.17.2
 RUN gem install foreman -v 0.85.0
 

@@ -1,7 +1,5 @@
 class RepositoriesController < ApplicationController
   def index
-    #TODO: uncomment this
-    #TODO: handle errors
     service = GithubService.new
     service.search_repositories_from_languages
 

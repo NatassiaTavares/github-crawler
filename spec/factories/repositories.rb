@@ -1,5 +1,4 @@
 FactoryBot.define do
-	#TODO create other factories with different github_ids
 	factory :repository do
 		github_id 34526884
 		name "cats"
