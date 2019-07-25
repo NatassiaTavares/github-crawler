@@ -19,15 +19,34 @@ First, build the necessary images with:
 docker-compose build
 ```
 
+Install the webpacker with:
+```
+docker-compose run web rails webpacker:install
+```
+
+Everything should go smooth until this point, but I sometimes got this error:
+
+
+
+To solve all we need to do is to run XX directly inside the container with:
+```
+docker-compose run web yarn install --check-files
+```
+You can retry to install webpacker now, it should work, sorry about that.
+
+Now we must get the database ready, for this, we shall run:
+```
+docker-compose run web rake db:setup
+```
+
+Run the migrations with: 
+```
+docker-compose run web rake db:migrate
+```
+
 then run the container with:
 ```
 docker-compose up
-```
-
-Now we must get the database ready and run the migrations, for this, we shall run:
-```
-docker-compose run web rake db:setup
-docker-compose run web rake db:migrate
 ```
 
 The app should be running in localhost:3000.
@@ -35,8 +54,13 @@ The app should be running in localhost:3000.
 ## Tests
 This application uses [RSpec Rails](https://github.com/rspec/rspec-rails) for testing.
 
-To run the test suite, the containers must be previously build, then run:
+To run the test suite, the containers must be previously build, first, we need to get the test database ready with:
 
+```
+docker-compose run web rake db:test:prepare
+```
+
+Then the test suite is ready to be run with:
 ```
 docker-compose run web rake spec
 ```
