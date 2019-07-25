@@ -10,5 +10,6 @@
         <li class="li">Quantidade de Watchers: <%= @repository.watchers %></li>
         <li class="li">Score: <%= @repository.score %></li>
         <li class="li">Linguagem: <%= @repository.language %></li>
+        <li class="li"><%= link_to @repository.owner.login, owner_show_path(@repository.owner), class: "link"%></li>
     </ul>
 </div>

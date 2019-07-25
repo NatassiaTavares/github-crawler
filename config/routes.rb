@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'owner/show'
   root 'home#index'
   get 'repositories/index'
   get 'repositories/show'

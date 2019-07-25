@@ -7,7 +7,7 @@
     <ul class="list-without-style">
         <% @repositories.each do |repository| %>
             <li class="li">
-                <%= link_to repository.name, repositories_show_path(repository), class: "repo-link"	 %>
+                <%= link_to repository.name, repositories_show_path(repository), class: "link"	 %>
             </li>
         <% end %>
     </ul>

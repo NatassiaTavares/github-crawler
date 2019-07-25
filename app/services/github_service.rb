@@ -58,7 +58,7 @@ class GithubService
         owner.external_id = owner_hash['id']
         owner.url = owner_hash['url']
         owner.html_url = owner_hash['html_url']
-        #owner.login = owner_hash['login']    
+        owner.login = owner_hash['login']    
 
         owner
     end
