@@ -7,12 +7,15 @@ class GithubService
 	end
 
 	def search_repositories_from_languages
-		@languages.each do |language|
-			complete_url = "#{@url}/search/repositories?q=language:#{language}&sorts:stars"
-			response = RestClient.get(complete_url)
-			response_hash = JSON.parse(response)
+		begin
+			@languages.each do |language|
+				complete_url = "#{@url}/search/repositories?q=language:#{language}&sorts:stars"
+				response = RestClient.get(complete_url)
+				response_hash = JSON.parse(response)
 
-			save_data_from_response(response_hash)
+				save_data_from_response(response_hash)
+			end
+		rescue RestClient::Forbidden => error
 		end
 	end
 
