@@ -1,8 +1,9 @@
+require 'pry'
 class RepositoriesController < ApplicationController
   def index
     #TODO: uncomment this
-    # service = GithubService.new
-    # service.search_repositories_from_languages
+    service = GithubService.new
+    service.search_repositories_from_languages
 
     @repositories = Repository.all
   end

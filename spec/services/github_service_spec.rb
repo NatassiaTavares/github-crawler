@@ -9,7 +9,6 @@ RSpec.describe GithubService do
 		it 'should return a repository list' do
 			VCR.use_cassette("repositories/search_from_language") do
 				repositories = @service.search_repositories_from_languages
-				binding.pry
 				expect(repositories).not_to be_empty
 			end
 		end

@@ -1,5 +1,9 @@
 <div class="center-div flex-column with-margin">
     <h2>Repositórios</h2>
+    <% if @repositories.empty? %>
+        <p> Ooops... não há nenhum repositório aqui, algo deu errado :( </p>
+    <% end %>
+
     <ul class="list-without-style">
         <% @repositories.each do |repository| %>
             <li class="li">
