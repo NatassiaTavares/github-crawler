@@ -25,14 +25,13 @@ docker-compose run web rails webpacker:install
 ```
 
 Everything should go smooth until this point, but I sometimes got this error:
-
-
+TODO: paste the error here
 
 To solve all we need to do is to run XX directly inside the container with:
 ```
 docker-compose run web yarn install --check-files
 ```
-You can retry to install webpacker now, it should work, sorry about that.
+You can retry to install webpacker now, it should work.
 
 Now we must get the database ready, for this, we shall run:
 ```

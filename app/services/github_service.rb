@@ -44,15 +44,14 @@ class GithubService
 		repo.score = repository_hash['score']
 		repo.language = repository_hash['language']
 
-		#TODO: this is bad code
-		owner = create_owner_from_response(repository_hash['owner'])
+		owner = build_owner_from_response(repository_hash['owner'])
 		owner.save
 		
 		repo.owner = owner
 		repo.save
 	end
 
-	def create_owner_from_response(owner_hash) 
+	def build_owner_from_response(owner_hash) 
 		owner = Owner.find_by(external_id: owner_hash['id'])
 		return owner unless owner.blank?
 		
