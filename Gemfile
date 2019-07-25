@@ -30,11 +30,12 @@ gem 'rest-client', '~> 2.0', '>= 2.0.2'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
-  gem 'rspec-rails', '~> 3.8'
+  gem 'rspec-rails', '~> 4.0.0.beta2'
   gem 'pry', '~> 0.12.2'
   gem 'pry-remote'
   gem 'pry-nav'
   gem 'vcr', '~> 5.0'
+  gem 'factory_bot_rails', '~> 4.10.0'
 end
 
 group :development do

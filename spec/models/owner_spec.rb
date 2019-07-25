@@ -1,5 +1,16 @@
 require 'rails_helper'
 
 RSpec.describe Owner, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  include FactoryBot::Syntax::Methods
+
+  before :each do
+    @owner = create(:owner)
+  end
+
+  describe 'validates uniqueness of external_id' do
+    it 'is not valid' do
+      owner = @owner.dup
+      expect(owner).to_not be_valid
+    end
+  end
 end

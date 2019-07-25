@@ -8,6 +8,6 @@ class RepositoriesController < ApplicationController
   end
 
   def show
-    @repository = Repository.find(params[:format])
+    @repository = Repository.find(params[:id])
   end
 end

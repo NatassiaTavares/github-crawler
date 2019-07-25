@@ -1,6 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe RepositoriesController, type: :controller do
+  before :all do
+    @repository_id = create(:repository)
+  end
 
   describe "GET #index" do
     it "returns http success" do
@@ -11,7 +14,7 @@ RSpec.describe RepositoriesController, type: :controller do
 
   describe "GET #show" do
     it "returns http success" do
-      get :show
+      get :show, { :format => @repository_id }
       expect(response).to have_http_status(:success)
     end
   end
