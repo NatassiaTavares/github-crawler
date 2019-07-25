@@ -2,7 +2,7 @@
     <h2><%= @repository.name %></h2>
     <ul>
         <li class="li">Nome completo: <%= @repository.full_name %></li>
-        <li class="li"><%= @repository.private %></li>
+        <li class="li">É um repositório privado?<%= @repository.private ? 'Sim' : 'Não' %></li>
         <li class="li">Url: <%= @repository.html_url %></li>
         <li class="li">Descrição: <%= @repository.description %></li>
         <li class="li"><%= @repository.fork %></li>
