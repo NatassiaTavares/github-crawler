@@ -2,14 +2,14 @@
     <h2><%= @repository.name %></h2>
     <ul>
         <li class="li">Nome completo: <%= @repository.full_name %></li>
-        <li class="li">É um repositório privado?<%= @repository.private ? 'Sim' : 'Não' %></li>
         <li class="li">Url: <%= @repository.html_url %></li>
         <li class="li">Descrição: <%= @repository.description %></li>
-        <li class="li"><%= @repository.fork %></li>
         <li class="li">Issues abertos: <%= @repository.open_issues %></li>
         <li class="li">Quantidade de Watchers: <%= @repository.watchers %></li>
         <li class="li">Score: <%= @repository.score %></li>
         <li class="li">Linguagem: <%= @repository.language %></li>
-        <li class="li"><%= link_to @repository.owner.login, owner_show_path(@repository.owner), class: "link"%></li>
+        <li class="li">Proprietário: <%= link_to @repository.owner.login, owner_show_path(@repository.owner), class: "link"%></li>
+        <li class="li">Esse repositório possui forks? <%= @repository.fork ? 'Sim' : 'Não'%></li>
+        <li class="li">É um repositório privado? <%= @repository.private ? 'Sim' : 'Não' %></li>
     </ul>
 </div>
