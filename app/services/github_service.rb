@@ -1,5 +1,5 @@
 require 'rest-client'
-require 'pry'
+
 class GithubService
     def initialize
         @url = 'api.github.com'

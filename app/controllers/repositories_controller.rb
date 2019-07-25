@@ -1,4 +1,3 @@
-require 'pry'
 class RepositoriesController < ApplicationController
   def index
     #TODO: uncomment this
