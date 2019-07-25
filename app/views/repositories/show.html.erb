@@ -8,7 +8,7 @@
 		<li class="li">Quantidade de Watchers: <%= @repository.watchers %></li>
 		<li class="li">Score: <%= @repository.score %></li>
 		<li class="li">Linguagem: <%= @repository.language %></li>
-		<li class="li">Proprietário: <%= link_to @repository.owner.login, owner_path(@repository.owner), class: "link"%></li>
+		<li class="li">Proprietário: <%= link_to @repository.owner.login, @repository.owner, class: "link"%></li>
 		<li class="li">Esse repositório possui forks? <%= @repository.fork ? 'Sim' : 'Não'%></li>
 		<li class="li">É um repositório privado? <%= @repository.private ? 'Sim' : 'Não' %></li>
 	</ul>
