@@ -14,9 +14,8 @@ RSpec.describe RepositoriesController, type: :controller do
 
   describe "GET #show" do
     it "returns http success" do
-      visit repository_path(@repository.id)
-      page.should have_content(@repository.name)  
+      get :show, params: { id: @repository.id }
+      expect(response).to have_http_status(:success) 
     end
   end
-
 end

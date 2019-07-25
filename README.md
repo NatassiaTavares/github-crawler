@@ -4,6 +4,11 @@ Gets the top rated repositories from Github in five languages: java, elixir, pyt
 
 This application is running on heroku [here](https://github-crawler-nat.herokuapp.com).
 
+## Behavior
+All Github integration is made in github_service.rb, there, a search request is made for each of the five languages, the repositories found are recorded straight to the database. 
+
+Github API has a rate time limit for the amount of made requests, throwing a 403 Http Status when the rate is reached, to handle this, just a simple exception is being used, there's no need to implement any fallout, the application will render the repositories already in the database. 
+
 ## Up and Running
 This application uses [Docker](https://www.docker.com/), so you must have docker and [docker-compose](https://docs.docker.com/compose/) installed.
 

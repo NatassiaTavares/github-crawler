@@ -7,8 +7,8 @@ RSpec.describe OwnersController, type: :controller do
 
   describe "GET #show" do
     it "returns http success" do
-      visit owner_path(@owner.id)
-      page.should have_content(@owner.login)
+      get :show, params: { id: @owner.id }
+      expect(response).to have_http_status(:success)
     end
   end
 end
