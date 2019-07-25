@@ -4,7 +4,7 @@ RSpec.describe Owner, type: :model do
   include FactoryBot::Syntax::Methods
 
   before :each do
-    @owner = Owner.any? ||= create(:owner)
+    @owner = Owner.any? ? Owner.first : create(:owner)
   end
 
   describe 'validates uniqueness of external_id' do

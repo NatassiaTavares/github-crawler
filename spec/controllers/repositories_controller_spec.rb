@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe RepositoriesController, type: :controller do
   before :all do
-    @repository = Repository.any? ||= create(:repository)
+    @repository = Repository.any? ? Repository.first : create(:repository)
   end
 
   describe "GET #index" do
