@@ -7,6 +7,8 @@ This application is running on heroku [here](https://github-crawler-nat.herokuap
 ## Behavior
 All Github integration is made in github_service.rb, there, a search request is made for each of the five languages, the repositories found are recorded straight to the database. 
 
+On each search request to Github API are returned 30 results. Because the application searches 5 times (one for each language), 150 records are stored in the database.
+
 Github API has a rate time limit for the amount of made requests, throwing a 403 Http Status when the rate is reached, to handle this, just a simple exception is being used, there's no need to implement any fallout, the application will render the repositories already in the database. 
 
 ## Up and Running
@@ -22,9 +24,10 @@ then run the container with:
 docker-compose up
 ```
 
-Now we must get the database ready, for this, we shall run:
+Now we must get the database ready and run the migrations, for this, we shall run:
 ```
 docker-compose run web rake db:setup
+docker-compose run web rake db:migrate
 ```
 
 The app should be running in localhost:3000.

@@ -1,0 +1,9 @@
+file:///home/nat/Documents/projects/github-crawler/spec/models/repository_spec.rb {"mtime":1564018513019,"size":128,"etag":"33jb3ag9l44","orphaned":false}
+require 'rails_helper'
+
+RSpec.describe Repository, type: :model do
+  describe 'repository without owner' do
+    it '' do
+    end
+  end
+end
