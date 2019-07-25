@@ -1,24 +1,34 @@
-# README
+# Github Crawler
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Gets the top rated repositories from Github in five languages: java, elixir, python, ruby and scala. The repositories are stored in a Postgres powered database.
 
-Things you may want to cover:
+This application is running on heroku [here](https://github-crawler-nat.herokuapp.com).
 
-* Ruby version
+## Up and Running
+This application uses [Docker](https://www.docker.com/), so you must have docker and [docker-compose](https://docs.docker.com/compose/) installed.
 
-* System dependencies
+First, build the necessary images with:
+```
+docker-compose build
+```
 
-* Configuration
+then run the container with:
+```
+docker-compose up
+```
 
-* Database creation
+Now we must get the database ready, for this, we shall run:
+```
+docker-compose run web rake db:setup
+```
 
-* Database initialization
+The app should be running in localhost:3000.
 
-* How to run the test suite
+## Tests
+This application uses [RSpec Rails](https://github.com/rspec/rspec-rails) for testing.
 
-* Services (job queues, cache servers, search engines, etc.)
+To run the test suite, the containers must be previously build, then run:
 
-* Deployment instructions
-
-* ...
+```
+docker-compose run web rake spec
+```
